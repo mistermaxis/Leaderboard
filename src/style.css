@@ -1,3 +1,47 @@
-body {
-  text-align: right;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.inline-flex {
+  display: inline flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.flex-row-center {
+  justify-content: center;
+}
+
+.full-width-container {
+  width: 90%;
+  padding: 1rem;
+}
+
+.flex-item {
+  flex-grow: 1;
+}
+
+li {
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+  }
 }
