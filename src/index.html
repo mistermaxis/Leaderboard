@@ -9,23 +9,37 @@
 </head>
 
 <body>
-  <h1>Leaderboard</h1>
   <div class="flex-center flex-container flex-row-center">
-    <main class="flex-container full-width-container">
-      <section class="flex-container flex-item flex-column flex-center">
-        <div>
-          <header class="inline-flex">
-            <h2>Recent scores</h2><button type="button">Refresh</button>
-          </header>
-          <ul>
-            <li>name: 30</li>
-            <li>name: 30</li>
-            <li>name: 30</li>
-            <li>name: 30</li>
-            <li>name: 30</li>
-          </ul>
-        </div>
-      </section>
+    <main class="flex-container full-width-container flex-column">
+      <header>
+        <h1>Leaderboard</h1>
+      </header>
+      <div class="flex-container main-container">
+        <section class="flex-container flex-item flex-column flex-center">
+          <div>
+            <header class="inline-flex">
+              <h2>Recent scores</h2><button type="button">Refresh</button>
+            </header>
+            <ul>
+              <li>name: 30</li>
+              <li>name: 30</li>
+              <li>name: 30</li>
+              <li>name: 30</li>
+              <li>name: 30</li>
+            </ul>
+          </div>
+        </section>
+        <section class="flex-item">
+          <div class="flex-container flex-row-center">
+            <form action="#" class="flex-column">
+              <h2>Add your score</h2>
+              <input class="d-block" type="text" name="name" id="name" placeholder="Your name">
+              <input  class="d-block" type="text" name="score" id="score" placeholder="Your score">
+              <button class="d-block" type="submit">Submit</button>
+            </form>
+          </div>
+        </section>
+      </div>
     </main>
   </div>
 </body>
