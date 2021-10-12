@@ -15,15 +15,21 @@
       <section class="flex-container flex-item flex-column flex-center">
         <div>
           <header class="inline-flex">
-            <h2>Recent scores</h2><button type="button">Refresh</button>
+            <h2>Recent scores</h2><button id="refresh" type="button">Refresh</button>
           </header>
-          <ul>
-            <li>name: 30</li>
-            <li>name: 30</li>
-            <li>name: 30</li>
-            <li>name: 30</li>
-            <li>name: 30</li>
+          <ul id="scores">
+            <li><span>Name</span><span>Score</span></li>
           </ul>
+        </div>
+      </section>
+      <section class="flex-container flex-item flex-column flex-center">
+        <div>
+          <form action="#" id="form" class="flex-column">
+            <h2>Add your score</h2>
+            <input class="d-block" type="text" name="name" id="name" placeholder="New Name" required>
+            <input class="d-block" type="number" name="score" id="score" placeholder="New Score" required>
+            <button class="d-block" type="submit">Submit</button>
+          </form>
         </div>
       </section>
     </main>

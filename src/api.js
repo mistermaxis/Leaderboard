@@ -1,24 +1,38 @@
+import { result } from "lodash";
 import PostRequest from "./post";
 
 class Api {
     #baseUrl;
-    #newGame;
+    #gameId;
     
     constructor () {
         this.#baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
-        this.#newGame = 'Microverse Enigma Force';
+        this.#gameId = 'IuTVpEO5Ut4z13eiFUBV';
     }
 
-    async createGame() {
-        let newGame = {
-            name: this.#newGame,
-        }
-        
-        console.log(JSON.stringify(newGame));
+    async createScore(user, score) {
+        let newScore = {
+            user,
+            score,
+        };
 
-        await fetch(this.#baseUrl, new PostRequest(newGame).request)
+        console.log(JSON.stringify(newScore));
+
+        let gameUrl = this.#baseUrl + this.#gameId + '/scores/';
+
+        fetch(gameUrl, new PostRequest(newScore).request)
         .then(response => response.json())
         .then(response => console.log(response));
+    }
+
+    async getScores() {
+
+        const gameUrl = this.#baseUrl + this.#gameId + '/scores/';
+        
+        let requestResult = await fetch(gameUrl)
+        .then(response => response.json());
+
+        return requestResult;
     }
 }
 
