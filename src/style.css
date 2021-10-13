@@ -33,7 +33,11 @@
 }
 
 .flex-item {
-  flex-grow: 1;
+  width: 50%;
+}
+
+.result {
+  width: 60%;
 }
 
 li {
@@ -41,7 +45,11 @@ li {
 }
 
 @media only screen and (max-width: 600px) {
-  .flex-container {
-    flex-direction: column;
+  .main-container {
+    flex-direction: column-reverse;
+  }
+
+  .flex-item {
+    width: unset;
   }
 }

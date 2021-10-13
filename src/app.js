@@ -1,47 +1,60 @@
-import Api from "./api";
-import ScoreBuilder from "./score-builder";
+import Api from './api.js';
+import ScoreBuilder from './score-builder.js';
 
 class App {
     #scoreForm;
-    #scores;
+
     #scoreList;
+
+    #resultParagraph;
+
     #scoreBuilder;
+
     #refreshButton;
+
     #scoreApi;
 
     constructor() {
-        this.#scoreApi = new Api();
-        this.#scoreForm = document.getElementById('form');
-        this.#refreshButton = document.getElementById('refresh');
-        this.#scoreList = document.getElementById('scores');
-        this.#scores = null;
-        this.#scoreBuilder = new ScoreBuilder();
+      this.#scoreApi = new Api();
+      this.#scoreForm = document.getElementById('form');
+      this.#refreshButton = document.getElementById('refresh');
+      this.#scoreList = document.getElementById('scores');
+      this.#resultParagraph = document.getElementById('result');
+      this.#scoreBuilder = new ScoreBuilder();
     }
 
     start() {
-        this.#scoreForm.addEventListener('submit', (e) => this.#postScore(e));
-        this.#refreshButton.addEventListener('click', () => this.#refreshScores());
+      this.#scoreForm.addEventListener('submit', (e) => this.#postScore(e));
+      this.#refreshButton.addEventListener('click', () => this.#refreshScores());
+      this.#refreshScores();
     }
 
     #postScore(event) {
-        event.preventDefault();
+      event.preventDefault();
 
-        const name = event.currentTarget[0];
-        const score = event.currentTarget[1];
-        
-        if (name && score) {
-            this.#scoreApi.createScore(name.value, parseInt(score.value));
+      const name = event.currentTarget[0];
+      const score = event.currentTarget[1];
 
-            name.value = '';
-            score.value = '';
-        }
+      if (name && score) {
+        this.#scoreApi.createScore(name.value, parseInt(score.value, 10)).then((response) => {
+          this.#resultParagraph.innerText = response.result;
+          setTimeout(() => {
+            this.#resultParagraph.innerText = '';
+          }, 2000);
+          this.#refreshScores();
+        });
+
+        name.value = '';
+        score.value = '';
+      }
     }
 
-    async #refreshScores() {
+    #refreshScores() {
+      this.#scoreList.innerHTML = '';
 
-        this.#scoreApi.getScores().then(scores => {
-            this.#scoreBuilder.build(this.#scoreList, scores.result);
-        });
+      this.#scoreApi.getScores().then((scores) => {
+        this.#scoreBuilder.build(this.#scoreList, scores.result);
+      });
     }
 }
 

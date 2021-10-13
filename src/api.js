@@ -1,38 +1,36 @@
-import { result } from "lodash";
-import PostRequest from "./post";
+import PostRequest from './post.js';
 
 class Api {
     #baseUrl;
+
     #gameId;
-    
-    constructor () {
-        this.#baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
-        this.#gameId = 'IuTVpEO5Ut4z13eiFUBV';
+
+    constructor() {
+      this.#baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+      this.#gameId = 'kABQMa1FIPU1tSlHglRO';
     }
 
     async createScore(user, score) {
-        let newScore = {
-            user,
-            score,
-        };
+      const newScore = {
+        user,
+        score,
+      };
 
-        console.log(JSON.stringify(newScore));
+      const gameUrl = `${this.#baseUrl + this.#gameId}/scores/`;
 
-        let gameUrl = this.#baseUrl + this.#gameId + '/scores/';
+      const postResult = await fetch(gameUrl, new PostRequest(newScore).request)
+        .then((response) => response.json());
 
-        fetch(gameUrl, new PostRequest(newScore).request)
-        .then(response => response.json())
-        .then(response => console.log(response));
+      return postResult;
     }
 
     async getScores() {
+      const gameUrl = `${this.#baseUrl + this.#gameId}/scores/`;
 
-        const gameUrl = this.#baseUrl + this.#gameId + '/scores/';
-        
-        let requestResult = await fetch(gameUrl)
-        .then(response => response.json());
+      const requestResult = await fetch(gameUrl)
+        .then((response) => response.json());
 
-        return requestResult;
+      return requestResult;
     }
 }
 
