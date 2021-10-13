@@ -6,7 +6,7 @@ class App {
 
     #scoreList;
 
-    #resultParagraph;
+    #resultMessage;
 
     #scoreBuilder;
 
@@ -19,7 +19,7 @@ class App {
       this.#scoreForm = document.getElementById('form');
       this.#refreshButton = document.getElementById('refresh');
       this.#scoreList = document.getElementById('scores');
-      this.#resultParagraph = document.getElementById('result');
+      this.#resultMessage = document.getElementById('result');
       this.#scoreBuilder = new ScoreBuilder();
     }
 
@@ -37,10 +37,12 @@ class App {
 
       if (name && score) {
         this.#scoreApi.createScore(name.value, parseInt(score.value, 10)).then((response) => {
-          this.#resultParagraph.innerText = response.result;
+          this.#resultMessage.innerText = response.result;
+
           setTimeout(() => {
-            this.#resultParagraph.innerText = '';
-          }, 2500);
+            this.#resultMessage.innerHTML = '';
+          }, 3500);
+
           this.#refreshScores();
         });
 
