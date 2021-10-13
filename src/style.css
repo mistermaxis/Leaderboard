@@ -99,13 +99,17 @@ body {
   margin-bottom: 1rem;
 }
 
+.input-section div {
+  width: 65%;
+}
+
 #form {
   margin: 0;
 }
 
 #name,
 #score {
-  width: 75%;
+  align-self: stretch;
 }
 
 .submit-button {
@@ -117,6 +121,7 @@ body {
   font-weight: bold;
   font-size: 1rem;
   transition: scale 0.1s;
+  align-self: flex-end;
 }
 
 .submit-button:hover {
