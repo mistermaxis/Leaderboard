@@ -9,34 +9,29 @@
 <script defer src="bundle.js"></script></head>
 
 <body>
-  <h1>Leaderboard</h1>
   <div class="flex-center flex-container flex-row-center">
-    <main class="flex-container full-width-container">
+    <main class="main-container flex-container full-width-container">
       <section class="flex-container flex-item flex-column flex-center">
         <div>
           <header class="inline-flex">
-            <h2>Recent scores</h2><button type="button">Refresh</button>
+            <h2>Recent scores</h2><button id="refresh" type="button">Refresh</button>
           </header>
-          <ul>
-            <li>name: 30</li>
-            <li>name: 30</li>
-            <li>name: 30</li>
-            <li>name: 30</li>
-            <li>name: 30</li>
+          <div><span>Name</span><span>Score</span></div>
+          <ul id="scores">
           </ul>
         </div>
       </section>
-      <section class="flex-item flex-container flex-row-center">
+      <section class="flex-container flex-item flex-column flex-center">
         <div>
-          <form action="#" class="d-column">
+          <form action="#" id="form" class="flex-container flex-column flex-center">
             <h2>Add your score</h2>
-            <input class="d-block" type="text" name="name" id="name" placeholder="Your name">
-            <input  class="d-block" type="text" name="score" id="score" placeholder="Your score">
+            <input class="d-block" type="text" name="name" id="name" placeholder="New Name" required>
+            <input class="d-block" type="number" name="score" id="score" placeholder="New Score" required>
             <button class="d-block" type="submit">Submit</button>
+            <p id="result" class="result"></p>
           </form>
         </div>
       </section>
-
     </main>
   </div>
 </body>
