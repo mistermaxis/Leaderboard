@@ -33,7 +33,15 @@
 }
 
 .flex-item {
-  flex-grow: 1;
+  width: 50%;
+}
+
+.header {
+  align-self: start;
+}
+
+.result {
+  width: 60%;
 }
 
 li {
@@ -42,7 +50,11 @@ li {
 
 @media only screen and (max-width: 600px) {
   .main-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  .flex-item {
+    width: unset;
   }
 }
 
