@@ -1,5 +1,6 @@
 class PostRequest {
     #body;
+
     #method;
 
     constructor(body) {

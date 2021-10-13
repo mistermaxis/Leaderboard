@@ -3,10 +3,15 @@ import ScoreBuilder from './score-builder.js';
 
 class App {
     #scoreForm;
+
     #scoreList;
+
     #resultParagraph;
+
     #scoreBuilder;
+
     #refreshButton;
+
     #scoreApi;
 
     constructor() {

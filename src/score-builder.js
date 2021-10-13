@@ -1,6 +1,8 @@
 class ScoreBuilder {
     #item;
+
     #name;
+
     #score;
 
     constructor() {
