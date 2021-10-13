@@ -3,15 +3,10 @@ import ScoreBuilder from './score-builder.js';
 
 class App {
     #scoreForm;
-
     #scoreList;
-
     #resultParagraph;
-
     #scoreBuilder;
-
     #refreshButton;
-
     #scoreApi;
 
     constructor() {
@@ -40,7 +35,7 @@ class App {
           this.#resultParagraph.innerText = response.result;
           setTimeout(() => {
             this.#resultParagraph.innerText = '';
-          }, 2000);
+          }, 2500);
           this.#refreshScores();
         });
 

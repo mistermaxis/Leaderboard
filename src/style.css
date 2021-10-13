@@ -36,6 +36,10 @@
   width: 50%;
 }
 
+.header {
+  align-self: start;
+}
+
 .result {
   width: 60%;
 }

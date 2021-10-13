@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Todo List
+# Leaderboard
 
 > A web app to display game leaderboards.
 

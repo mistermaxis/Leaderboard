@@ -2,7 +2,6 @@ import PostRequest from './post.js';
 
 class Api {
     #baseUrl;
-
     #gameId;
 
     constructor() {
