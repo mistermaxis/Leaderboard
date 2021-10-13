@@ -4,10 +4,16 @@
 
 > A web app to display game leaderboards.
 
+![screenshot](./app_screenshot.png)
+
 ## Built With
 
 - HTML, JavaScript, CSS
-- Webpack
+- Webpack, Lodash
+
+## Live Demo
+
+[Todo List Demo](https://mistermaxis.github.io/Leaderboard/)
 
 ## Getting Started
 
