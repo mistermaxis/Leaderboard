@@ -18,7 +18,10 @@ class App {
       this.#scoreApi = new Api();
       this.#scoreForm = document.getElementById('form');
       this.#refreshButton = document.getElementById('refresh');
+
       this.#scoreList = document.getElementById('scores');
+      this.#scoreList.classList.add('score-list');
+
       this.#resultMessage = document.getElementById('result');
       this.#scoreBuilder = new ScoreBuilder();
     }

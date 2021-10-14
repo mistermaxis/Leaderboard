@@ -11,33 +11,35 @@
 
 <body>
   <div class="app flex-container flex-center flex-column">
-    <header class="header"><h1>Leaderboard</h1></header>
-    <main class="main-container flex-container full-width-container">
-      <section class="scores-section flex-container flex-item flex-column flex-center">
-        <div>
-          <header class="flex-container">
-            <h2>Recent scores</h2>
-            <button id="refresh" class="refresh-button" title="Refresh the list of scores" type="button">
-              <i class="fas fa-redo"></i>
-            </button>
-          </header>
-          <ul id="scores" class="scores">
-          </ul>
+    <main>
+      <header class="header"><h1>Leaderboard</h1></header>
+        <div class="main-container flex-container full-width-container">
+         <section class="scores-section flex-container flex-item flex-column flex-center">
+           <div>
+             <header class="scores-header flex-container">
+               <h2>Recent scores</h2>
+               <button id="refresh" class="refresh-button" title="Refresh the list of scores" type="button">
+                 <i class="fas fa-redo"></i>
+               </button>
+             </header>
+             <ul id="scores" class="scores">
+             </ul>
+           </div>
+         </section>
+         <section class="input-section flex-container flex-item flex-column flex-center">
+           <div>
+             <header><h2>Add your score</h2></header>
+             <form action="#" id="form" class="flex-container flex-column flex-center">
+               <input type="text" title="Please enter your name" name="name" id="name" placeholder="New Name" required>
+               <input type="number" title="Please enter a score between 0 and 1000" name="score" id="score" placeholder="New Score" min=0 max=1000 required>
+               <button class="button submit-button" title="Submit your score" type="submit">Submit</button>
+             </form>
+           </div>
+           <div class="result">
+             <p id="result" class="result-message"></p>
+           </div>
+         </section>
         </div>
-      </section>
-      <section class="input-section flex-container flex-item flex-column flex-center">
-        <div>
-          <header><h2>Add your score</h2></header>
-          <form action="#" id="form" class="flex-container flex-column flex-center">
-            <input type="text" title="Please enter your name" name="name" id="name" placeholder="New Name" required>
-            <input type="number" title="Please enter a score between 0 and 1000" name="score" id="score" placeholder="New Score" min=0 max=1000 required>
-            <button class="button submit-button" title="Submit your score" type="submit">Submit</button>
-          </form>
-        </div>
-        <div class="result">
-          <p id="result" class="result-message"></p>
-        </div>
-      </section>
     </main>
   </div>
 </body>

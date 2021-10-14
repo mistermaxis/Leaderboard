@@ -52,6 +52,7 @@ body {
 
 .header > * {
   padding: 1rem;
+  user-select: none;
 }
 
 .result {
@@ -62,19 +63,34 @@ body {
   text-align: center;
 }
 
-.scores {
-  height: 100%;
-  overflow-y: auto;
-}
-
-.scores-section div > * {
+.scores-header {
+  font-family: 'Oswald', 'Courier New', Courier, monospace;
+  letter-spacing: 0.05rem;
   margin-bottom: 1rem;
 }
 
-.scores-section header > h2 {
+.scores-header > h2 {
   margin-right: 1rem;
-  font-family: 'Oswald', 'Courier New', Courier, monospace;
-  letter-spacing: 0.05rem;
+}
+
+.scores {
+  padding: 0.4rem 0.8rem;
+  overflow-y: auto;
+  height: 100%;
+  border: 0.15rem solid rgb(168, 223, 240);
+  border-radius: 0.4rem;
+}
+
+.scores-section > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.score-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.4rem 0;
 }
 
 .input-section header {
@@ -84,7 +100,7 @@ body {
 }
 
 .input-section input {
-  padding: 0.75rem;
+  padding: 0.8rem;
   font-size: 1rem;
   outline: none;
   border: 0.15rem solid rgb(168, 223, 240);
@@ -158,10 +174,6 @@ i {
   background-color: transparent;
 }
 
-li {
-  display: block;
-}
-
 @media only screen and (max-width: 600px) {
   .main-container {
     flex-direction: column-reverse;
@@ -174,11 +186,5 @@ li {
 
   section {
     margin-bottom: 1rem;
-  }
-}
-
-@media only screen and (min-width: 996px) {
-  .full-width-container {
-    width: 60%;
   }
 }
