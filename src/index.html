@@ -5,32 +5,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/9aaf557d52.js" crossorigin="anonymous"></script>
   <title>Leaderboard App</title>
 </head>
 
 <body>
-  <div class="flex-container flex-center flex-column">
+  <div class="app flex-container flex-center flex-column">
     <header class="header"><h1>Leaderboard</h1></header>
     <main class="main-container flex-container full-width-container">
-      <section class="flex-container flex-item flex-column flex-center">
+      <section class="scores-section flex-container flex-item flex-column flex-center">
         <div>
-          <header class="inline-flex">
-            <h2>Recent scores</h2><button id="refresh" type="button">Refresh</button>
+          <header class="flex-container">
+            <h2>Recent scores</h2>
+            <button id="refresh" class="refresh-button" title="Refresh the list of scores" type="button">
+              <i class="fas fa-redo"></i>
+            </button>
           </header>
-          <div><span>Name</span><span>Score</span></div>
-          <ul id="scores">
+          <ul id="scores" class="scores">
           </ul>
         </div>
       </section>
-      <section class="flex-container flex-item flex-column flex-center">
+      <section class="input-section flex-container flex-item flex-column flex-center">
         <div>
+          <header><h2>Add your score</h2></header>
           <form action="#" id="form" class="flex-container flex-column flex-center">
-            <h2>Add your score</h2>
-            <input class="d-block" type="text" name="name" id="name" placeholder="New Name" required>
-            <input class="d-block" type="number" name="score" id="score" placeholder="New Score" required>
-            <button class="d-block" type="submit">Submit</button>
-            <p id="result" class="result"></p>
+            <input type="text" title="Please enter your name" name="name" id="name" placeholder="New Name" required>
+            <input type="number" title="Please enter a score between 0 and 1000" name="score" id="score" placeholder="New Score" min=0 max=1000 required>
+            <button class="button submit-button" title="Submit your score" type="submit">Submit</button>
           </form>
+        </div>
+        <div class="result">
+          <p id="result" class="result-message"></p>
         </div>
       </section>
     </main>

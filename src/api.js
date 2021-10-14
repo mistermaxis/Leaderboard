@@ -7,7 +7,7 @@ class Api {
 
     constructor() {
       this.#baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
-      this.#gameId = 'kABQMa1FIPU1tSlHglRO';
+      this.#gameId = 'XnhD2DIpcgPew4AOtwyC';
     }
 
     async createScore(user, score) {
